@@ -98,6 +98,7 @@ use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-de
 
   -- Java
   use "mfussenegger/nvim-jdtls"
+  -- use {'neoclide/coc.nvim', branch = 'release'}
 
   -- Typescript TODO: set this up, also add keybinds to ftplugin
   use "jose-elias-alvarez/typescript.nvim"
@@ -113,10 +114,10 @@ use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-de
   use "lewis6991/gitsigns.nvim"
 
   -- DAP
-  -- use "mfussenegger/nvim-dap"
+  use "mfussenegger/nvim-dap"
   -- use "theHamsta/nvim-dap-virtual-text"
-  -- use "rcarriga/nvim-dap-ui"
-  -- use "Pocco81/DAPInstall.nvim"
+  use "rcarriga/nvim-dap-ui"
+  use "Pocco81/DAPInstall.nvim"
 
   -- Plugin Graveyard
   -- use "romgrk/nvim-treesitter-context"

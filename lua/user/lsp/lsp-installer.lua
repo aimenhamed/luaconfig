@@ -7,7 +7,6 @@ local servers = {
   "cssls",
   "cssmodules_ls",
   "html",
-  "jdtls",
   "solc",
   "sumneko_lua",
   "tflint",
@@ -18,6 +17,8 @@ local servers = {
   "clangd",
   "rust_analyzer",
   "taplo",
+  "gopls",
+  "jdtls"
 }
 
 local settings = {
@@ -53,11 +54,6 @@ for _, server in pairs(servers) do
     capabilities = require("user.lsp.handlers").capabilities,
   }
 
-  if server == "yamlls" then
-    local yamlls_opts = require "user.lsp.settings.yamlls"
-    opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
-  end
-
   if server == "sumneko_lua" then
     local sumneko_opts = require "user.lsp.settings.sumneko_lua"
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
@@ -68,35 +64,6 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  if server == "solc" then
-    local solc_opts = require "user.lsp.settings.solc"
-    opts = vim.tbl_deep_extend("force", solc_opts, opts)
-  end
-
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-  end
-
-  if server == "jdtls" then
-    goto continue
-  end
-
-  if server == "rust_analyzer" then
-    local rust_opts = require "user.lsp.settings.rust"
-
-    local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
-    if not rust_tools_status_ok then
-      return
-    end
-
-    rust_tools.setup(rust_opts)
-    goto continue
-  end
-
   lspconfig[server].setup(opts)
-  ::continue::
 end
 
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}
