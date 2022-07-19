@@ -77,6 +77,8 @@ use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-de
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
 
+  use "xiyaowong/nvim-transparent"
+
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" }
   use "hrsh7th/cmp-buffer" -- buffer completions
