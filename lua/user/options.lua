@@ -52,8 +52,3 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[
-let g:coc_global_extensions = [
-    \ 'coc-java',
-    \ ]
-]]
