@@ -10,6 +10,10 @@ M.servers = {
   "jsonls",
   "yamlls",
   "rust_analyzer",
+  "jdtls",
+  "kotlin_language_server",
+  "gopls",
+  "zls",
 }
 
 return M
