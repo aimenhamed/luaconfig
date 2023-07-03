@@ -8,12 +8,13 @@ M.servers = {
   "pyright",
   "bashls",
   "jsonls",
-  "yamlls",
+  -- "yamlls",
   "rust_analyzer",
   "jdtls",
   "kotlin_language_server",
   "gopls",
   "zls",
+  "tailwindcss"
 }
 
 return M
