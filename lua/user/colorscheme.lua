@@ -12,6 +12,13 @@ local M = {
   priority = 1000,
 }
 
+-- rose-pine 
+-- local M = {
+--   "rose-pine/neovim",
+--   lazy = false,
+--   priority = 1000,
+-- }
+
 -- dark plus 
 -- local M = {
 --   "lunarvim/darkplus.nvim",
@@ -22,6 +29,7 @@ local M = {
 -- M.name = "darkplus"
 -- M.name = "tokyonight-night"
 M.name = "catppuccin-mocha"
+-- M.name = "rose-pine"
 function M.config()
   local status_ok, _ = pcall(vim.cmd.colorscheme, M.name)
   if not status_ok then

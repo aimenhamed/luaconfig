@@ -14,6 +14,9 @@ M.servers = {
   "kotlin_language_server",
   "gopls",
   "zls",
+  "svelte",
+  "prismals",
+  "phpactor",
   "tailwindcss"
 }
 

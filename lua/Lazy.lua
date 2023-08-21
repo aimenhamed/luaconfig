@@ -25,6 +25,7 @@ require("lazy").setup("user", {
   performance = {
     rtp = {
       disabled_plugins = {
+        -- "bufferline"
         -- "gzip", -- Plugin for editing compressed files.
         -- "matchit", -- What is it?
         --  "matchparen", -- Plugin for showing matching parens

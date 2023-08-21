@@ -72,13 +72,36 @@ function M.config()
     { name = "DiagnosticSignInfo", text = "" },
   }
 
+  local handlerVD = function(diagnostic)
+    if diagnostic.severity == vim.diagnostic.severity.ERROR then
+      return string.format(" %s", diagnostic.message)
+    end
+
+    if diagnostic.severity == vim.diagnostic.severity.INFO then
+      return string.format(" %s", diagnostic.message)
+    end
+
+    if diagnostic.severity == vim.diagnostic.severity.WARN then
+      return string.format(" %s", diagnostic.message)
+    end
+
+    if diagnostic.severity == vim.diagnostic.severity.HINT then
+      return string.format(" %s", diagnostic.message)
+    end
+    return diagnostic.message
+  end
+
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    -- virtual_text = true,
+    virtual_text = {
+      prefix = "",
+      format = handlerVD,
+    },
     -- show signs
     signs = {
       active = signs,
