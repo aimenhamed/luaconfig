@@ -103,3 +103,8 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- Context
+keymap("n", "<leader>c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })
