@@ -1,4 +1,4 @@
--- Shorten function name
+-- keymap("x", "gcc", "<cmd>lua toggle_comment_x()<cr>", opts)
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
@@ -68,27 +68,27 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", opts)
 
 -- Comment
--- keymap("n", "gcc", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("n", "gcc", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 -- keymap("n", "gcc", "<cmd>lua require('ts_context_commentstring.internal').update_commentstring()<cr>", opts)
--- keymap("x", "gcc", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-function toggle_comment_n()
-  -- Normal mode: Update the comment string or toggle comments linewise
-  local comment_api = require('Comment.api')
-  local ts_commentstring = require('ts_context_commentstring.internal')
-  ts_commentstring.update_commentstring()
-  comment_api.toggle.linewise.current()
-end
-
-function toggle_comment_x()
-  local comment_api = require('Comment.api')
-  local ts_commentstring = require('ts_context_commentstring.internal')
-  ts_commentstring.update_commentstring()
-  comment_api.toggle.linewise(vim.fn.visualmode())
-end
-
--- Define the keymap using the function
-keymap("n", "gcc", "<cmd>lua toggle_comment_n()<cr>", opts)
-keymap("x", "gcc", "<cmd>lua toggle_comment_x()<cr>", opts)
+keymap("x", "gcc", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+-- function toggle_comment_n()
+--   -- Normal mode: Update the comment string or toggle comments linewise
+--   local comment_api = require('Comment.api')
+--   local ts_commentstring = require('ts_context_commentstring.internal')
+--   ts_commentstring.update_commentstring()
+--   comment_api.toggle.linewise.current()
+-- end
+--
+-- function toggle_comment_x()
+--   local comment_api = require('Comment.api')
+--   local ts_commentstring = require('ts_context_commentstring.internal')
+--   ts_commentstring.update_commentstring()
+--   comment_api.toggle.linewise(vim.fn.visualmode())
+-- end
+--
+-- -- Define the keymap using the function
+-- keymap("n", "gcc", "<cmd>lua toggle_comment_n()<cr>", opts)
+-- keymap("x", "gcc", "<cmd>lua toggle_comment_x()<cr>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)

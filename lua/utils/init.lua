@@ -17,6 +17,7 @@ M.servers = {
   "svelte",
   "prismals",
   "phpactor",
+  "clangd",
   "tailwindcss"
 }
 
