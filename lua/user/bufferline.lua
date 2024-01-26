@@ -18,10 +18,6 @@ function M.config()
       separator_style = "thin",            -- | "thick" | "thin" | { 'any', 'any' },
     },
     highlights = {
-      fill = {
-        fg = { attribute = "fg", highlight = "#ff0000" },
-        bg = { attribute = "bg", highlight = "TabLine" },
-      },
       background = {
         fg = { attribute = "fg", highlight = "TabLine" },
         bg = { attribute = "bg", highlight = "TabLine" },
@@ -95,4 +91,3 @@ function M.config()
 end
 
 return M
--- return {}

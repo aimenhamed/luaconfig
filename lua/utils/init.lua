@@ -13,7 +13,6 @@ M.servers = {
   "jdtls",
   "kotlin_language_server",
   "gopls",
-  "zls",
   "svelte",
   "prismals",
   "phpactor",

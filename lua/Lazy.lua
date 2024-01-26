@@ -20,7 +20,7 @@ require("lazy").setup("user", {
   defaults = { lazy = true, version = "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
   ui = { wrap = "true" },
   checker = { enabled = false },
-  change_detection = { enabled = true },
+  change_detection = { enabled = false },
   debug = false,
   performance = {
     rtp = {
