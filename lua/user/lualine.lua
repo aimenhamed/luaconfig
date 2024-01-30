@@ -40,6 +40,10 @@ function M.config()
     padding = 0,
   }
 
+  local function icon()
+    return "☪"
+  end
+
   local spaces = function()
     return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
   end
@@ -56,8 +60,11 @@ function M.config()
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch" },
-      lualine_c = { diagnostics },
-      lualine_x = { diff, spaces, "encoding", filetype },
+      lualine_c = { diagnostics, icon },
+      lualine_x = { {
+        'datetime',
+        style = ' %I:%M:%S %p (%d/%m/%Y)'
+      }, diff, spaces, "encoding", filetype },
       lualine_y = { location },
       lualine_z = { "progress" },
     },
